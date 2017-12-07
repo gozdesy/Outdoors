@@ -1,0 +1,3 @@
+@function getGradient($col1, $col2){
+    @return linear-gradient(to right bottom, rgba($col1, 0.8), rgba($col2, 0.85));
+}
