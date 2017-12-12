@@ -7,7 +7,7 @@
         border-radius: 10rem;
         /* transition: all .2s; */
         position: relative;
-        font-size: 1.6rem;
+        @include respond-font(1.6rem);
     }
     
     &-white{
@@ -62,10 +62,10 @@
 .btn-text{
     &:link, 
     &:visited{
+        @include respond-font(2rem);
         display: inline-block;
         text-decoration: none;
         border-bottom: 1px solid $color-primary-dark;
-        font-size: 2rem;
         padding: 3px;
         transition: all .2s;
         color: $color-primary;

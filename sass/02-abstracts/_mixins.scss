@@ -5,3 +5,52 @@
         display: table;
       }
 }
+
+//Valid $breakpoint values
+//------------------------------------------
+//  phone
+//  tab-port
+//  tab-land
+//------------------------------------------
+$max-width-phone: 37.5em;  //600px/16
+$max-width-tab-port: 56.25em;  //900px/16
+$max-width-tab-land: 75em;  //1200px/16
+//------------------------------------------
+
+@mixin respond($breakpoint){
+    @if $breakpoint == tab-land{
+        @media only screen and (max-width:$max-width-tab-land){
+            @content
+        };
+    }
+    @if $breakpoint == tab-port{
+        @media only screen and (max-width:$max-width-tab-port){
+            @content
+        };
+    }
+    @if $breakpoint == phone{
+        @media only screen and (max-width:$max-width-phone){
+            @content
+        };
+    }
+}
+
+@mixin respond-touch-device(){
+    @media only screen and (max-width:$max-width-tab-port),
+     (hover:none){
+         @content
+     }
+}
+
+@mixin respond-font($font-size){
+    font-size: $font-size;
+    @media only screen and (max-width:$max-width-tab-land){
+        font-size: $font-size * 0.96;
+    };
+    @media only screen and (max-width:$max-width-tab-port){
+        font-size: $font-size * 0.90;
+    };
+    @media only screen and (max-width:$max-width-phone){
+        font-size: $font-size * 0.84;
+    };
+}

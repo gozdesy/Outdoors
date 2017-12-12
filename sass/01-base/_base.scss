@@ -8,6 +8,15 @@ html{
     /* font-size: 10px */
     /* yerine bu şekilde kullanmak good pratice */
     font-size: 62.5%;
+    @include respond(tab-land){ 
+        font-size: 75%;     //1200/16
+    }
+    @include respond(tab-port){
+        font-size: 56.25%;  //900/16
+    }
+    @include respond(phone){
+        font-size: 37.5%;   //600/16
+    }
 }
 
 body{
